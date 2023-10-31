@@ -7,7 +7,7 @@ import (
 type FakeClient struct {
 }
 
-func NewFakeClient(apiKey string) *FakeClient {
+func NewFakeClient() *FakeClient {
 	return &FakeClient{}
 }
 
