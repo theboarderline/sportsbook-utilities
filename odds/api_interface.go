@@ -42,8 +42,8 @@ type Market struct {
 
 type Outcome struct {
 	Name  string  `json:"name"`
-	Price float32 `json:"price"`
-	Point float32 `json:"point"`
+	Price float64 `json:"price"`
+	Point float64 `json:"point"`
 }
 
 type QueryParams struct {
