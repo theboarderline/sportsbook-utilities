@@ -37,6 +37,11 @@ var _ = Describe("Fake", func() {
 		Expect(len(odds)).To(BeNumerically(">=", 0))
 		Expect(len(odds[0].Bookmakers)).To(BeNumerically(">=", 0))
 		Expect(odds[0].Bookmakers[0].Key).NotTo(BeEmpty())
+		Expect(odds[0].Bookmakers[0].Markets).NotTo(BeEmpty())
+		Expect(odds[0].Bookmakers[0].Markets[0].Outcomes).NotTo(BeEmpty())
+		Expect(len(odds[0].Bookmakers[0].Markets[0].Outcomes)).To(BeNumerically(">=", 0))
+		Expect(odds[0].Bookmakers[0].Markets[0].Outcomes[0].Name).NotTo(BeEmpty())
+		Expect(odds[0].Bookmakers[0].Markets[0].Outcomes[0].Price).NotTo(BeZero())
 	})
 
 })

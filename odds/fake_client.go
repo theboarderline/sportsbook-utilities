@@ -20,15 +20,6 @@ func (f FakeClient) GetSportingLeagues() (leagues []SportingLeague, err error) {
 	return leagues, nil
 }
 
-func (f FakeClient) GetOddsForEvents(sportKey string, regions []string, marketsInput []string) (odds []SportingOdds, err error) {
-
-	if err = json.Unmarshal([]byte(FakeOddsResponse), &odds); err != nil {
-		return nil, err
-	}
-
-	return odds, nil
-}
-
 func (f FakeClient) GetUpcomingEvents(sportKey string) (events []SportingEvent, err error) {
 
 	if err = json.Unmarshal([]byte(FakeUpcomingEventsResponse), &events); err != nil {
@@ -36,4 +27,13 @@ func (f FakeClient) GetUpcomingEvents(sportKey string) (events []SportingEvent, 
 	}
 
 	return events, nil
+}
+
+func (f FakeClient) GetOddsForEvents(sportKey string, regions []string, marketsInput []string) (odds []SportingOdds, err error) {
+
+	if err = json.Unmarshal([]byte(FakeOddsResponse), &odds); err != nil {
+		return nil, err
+	}
+
+	return odds, nil
 }

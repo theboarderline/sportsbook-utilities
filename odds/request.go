@@ -57,8 +57,9 @@ func (r RequestInput) FormatURL() string {
 
 func (r RequestInput) GetQueryParams() map[string]string {
 	params := map[string]string{
-		"markets": r.markets(),
-		"regions": r.regions(),
+		"markets":    r.markets(),
+		"regions":    r.regions(),
+		"oddsFormat": "american",
 	}
 
 	return params

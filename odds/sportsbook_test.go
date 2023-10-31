@@ -34,6 +34,7 @@ var _ = Describe("Sportsbook", func() {
 		params := input.GetQueryParams()
 		Expect(params).To(HaveKeyWithValue("markets", "h2h,spreads"))
 		Expect(params).To(HaveKeyWithValue("regions", "us,uk"))
+		Expect(params).To(HaveKeyWithValue("oddsFormat", "american"))
 	})
 
 	It("can get the upcoming sporting leagues from the odds", func() {
