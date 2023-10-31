@@ -7,6 +7,14 @@ import (
 
 func (c *Client) GetOddsForEvents(sportKey string, regions []string, markets []string) (odds []SportingOdds, err error) {
 
+	if len(regions) == 0 {
+		regions = []string{"us"}
+	}
+
+	if len(markets) == 0 {
+		markets = []string{"h2h", "spreads"}
+	}
+
 	input := RequestInput{
 		SportKey: sportKey,
 		Regions:  regions,
