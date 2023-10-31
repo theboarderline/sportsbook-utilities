@@ -2,17 +2,13 @@ package odds
 
 import (
 	"encoding/json"
-	"github.com/go-resty/resty/v2"
 )
 
 type FakeClient struct {
 }
 
-func NewFakeClient(apiKey string) *Client {
-	return &Client{
-		httpClient: resty.New(),
-		apiKey:     apiKey,
-	}
+func NewFakeClient(apiKey string) *FakeClient {
+	return &FakeClient{}
 }
 
 func (f FakeClient) GetSportingLeagues() (leagues []SportingLeague, err error) {
