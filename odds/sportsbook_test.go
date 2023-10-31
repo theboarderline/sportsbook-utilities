@@ -53,7 +53,16 @@ var _ = Describe("Sportsbook", func() {
 		Expect(events[0].SportKey).NotTo(BeEmpty())
 	})
 
-	It("can get the odds for a game without params", func() {
+	It("can get the odds for a game without any params", func() {
+		odds, err := sportsbookClient.GetOddsForEvents("", nil, nil)
+		Expect(err).NotTo(HaveOccurred())
+		Expect(odds).NotTo(BeEmpty())
+		Expect(len(odds)).To(BeNumerically(">=", 0))
+		Expect(len(odds[0].Bookmakers)).To(BeNumerically(">=", 0))
+		Expect(odds[0].Bookmakers[0].Key).NotTo(BeEmpty())
+	})
+
+	It("can get the odds for a game without odds params", func() {
 		odds, err := sportsbookClient.GetOddsForEvents("americanfootball_ncaaf", nil, nil)
 		Expect(err).NotTo(HaveOccurred())
 		Expect(odds).NotTo(BeEmpty())
