@@ -45,3 +45,8 @@ type Outcome struct {
 	Price  float32 `json:"price"`
 	Points float32 `json:"points"`
 }
+
+type QueryParams struct {
+	Regions string `json:"regions"`
+	Markets string `json:"markets"`
+}
