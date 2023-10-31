@@ -2,10 +2,10 @@ package odds
 
 import "fmt"
 
-func (o Outcome) Format() string {
-	if o.Point > 0 {
-		return fmt.Sprintf("%s +%.0f", o.Name, o.Point)
+func (o Outcome) FormatPrice() string {
+	if o.Price > 0 {
+		return fmt.Sprintf("%s +%.0f", o.Name, o.Price)
 	}
 
-	return fmt.Sprintf("%s %.0f", o.Name, o.Point)
+	return fmt.Sprintf("%s %.0f", o.Name, o.Price)
 }

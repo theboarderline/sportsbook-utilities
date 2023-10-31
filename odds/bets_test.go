@@ -8,23 +8,23 @@ import (
 
 var _ = Describe("Bets", func() {
 
-	It("can format the string for an underdog bet", func() {
+	It("can format the price string for an underdog bet", func() {
 		bet := odds.Outcome{
 			Name:  "Chicago Bulls",
-			Point: 180,
+			Price: 180,
 		}
 
-		betString := bet.Format()
+		betString := bet.FormatPrice()
 		Expect(betString).To(Equal("Chicago Bulls +180"))
 	})
 
-	It("can format the string for a favorite bet", func() {
+	It("can format the price string for a favorite bet", func() {
 		bet := odds.Outcome{
 			Name:  "Chicago Bulls",
-			Point: -180,
+			Price: -180,
 		}
 
-		betString := bet.Format()
+		betString := bet.FormatPrice()
 		Expect(betString).To(Equal("Chicago Bulls -180"))
 	})
 
