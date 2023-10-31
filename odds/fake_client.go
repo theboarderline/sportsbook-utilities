@@ -13,7 +13,7 @@ func NewFakeClient() *FakeClient {
 
 func (f FakeClient) GetSportingLeagues() (leagues []SportingLeague, err error) {
 
-	if err = json.Unmarshal([]byte(FakeLeaguesResponse), leagues); err != nil {
+	if err = json.Unmarshal([]byte(FakeLeaguesResponse), &leagues); err != nil {
 		return nil, err
 	}
 
@@ -22,7 +22,7 @@ func (f FakeClient) GetSportingLeagues() (leagues []SportingLeague, err error) {
 
 func (f FakeClient) GetOddsForEvents(sportKey string, regions []string, marketsInput []string) (odds []SportingOdds, err error) {
 
-	if err = json.Unmarshal([]byte(FakeOddsResponse), odds); err != nil {
+	if err = json.Unmarshal([]byte(FakeOddsResponse), &odds); err != nil {
 		return nil, err
 	}
 
@@ -31,7 +31,7 @@ func (f FakeClient) GetOddsForEvents(sportKey string, regions []string, marketsI
 
 func (f FakeClient) GetUpcomingEvents(sportKey string) (events []SportingEvent, err error) {
 
-	if err = json.Unmarshal([]byte(FakeUpcomingEventsResponse), events); err != nil {
+	if err = json.Unmarshal([]byte(FakeUpcomingEventsResponse), &events); err != nil {
 		return nil, err
 	}
 
