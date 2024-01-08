@@ -3,7 +3,7 @@ module github.com/theboarderline/sportsbook-utilities
 go 1.21
 
 require (
-	github.com/go-resty/resty/v2 v2.10.0
+	github.com/go-resty/resty/v2 v2.11.0
 	github.com/onsi/ginkgo/v2 v2.13.0
 	github.com/onsi/gomega v1.29.0
 	github.com/rs/zerolog v1.31.0
